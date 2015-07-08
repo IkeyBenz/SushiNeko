@@ -27,7 +27,7 @@ class Piece: CCNode {
         }
     }
  
-// Here we want to change the side that the chopsticks will appear according to the four rules listed online. If there was a chopstick on the last piece, then there wont be one on the next. 45% of the time, chopsticks will appear on the left side. 45% of the time chopsticks will appear on the right side. 10% of the time, no chopstick will appear. This code was self written :D
+// Here we want to change the side that the chopsticks will appear according to the four rules listed online. If there was a chopstick on the last piece, then there won't be one on the next. 45% of the time, chopsticks will appear on the left side. 45% of the time chopsticks will appear on the right side. 10% of the time, no chopstick will appear. This code was self written :D
     
     func setObstacle(lastSide:Side) -> Side {
         var didHaveAnObstacle: Bool!
@@ -43,9 +43,9 @@ class Piece: CCNode {
         
         if didHaveAnObstacle == true {
             side = .None
-        } else if randomInt < 0.45 {
+        } else if randomInt < 0.45 && didHaveAnObstacle == false {
             side = .Right
-        } else if randomInt < 0.9 {
+        } else if randomInt < 0.9  && didHaveAnObstacle == false {
             side = .Left
         } else {
             side = .None
